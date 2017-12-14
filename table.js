@@ -33,8 +33,8 @@ class Table{
 			let data= checkWhichHeaderWasClicked(event);
 			let index= getIndexOfTheCorrectData(data);
 			let value=checkIsAscendAttributeValue(event);
-			if(value==='true'){
-				event.target.setAttribute('isAscend',!value);
+			
+				
 				if(isNaN(a.querySelectorAll('td')[index].innerHTML.toLowerCase())){
 					if(a.querySelectorAll('td')[index].innerHTML.toLowerCase() < b.querySelectorAll('td')[index].innerHTML.toLowerCase()) return -1;
 					if(a.querySelectorAll('td')[index].innerHTML.toLowerCase() > b.querySelectorAll('td')[index].innerHTML.toLowerCase()) return 1;
@@ -43,17 +43,7 @@ class Table{
 				else{
 					return ((a.querySelectorAll('td')[index].innerHTML)-(b.querySelectorAll('td')[index].innerHTML));
 				}
-			}else{
-				event.target.setAttribute('isAscend',!value);
-				if(isNaN(a.querySelectorAll('td')[index].innerHTML.toLowerCase())){
-					if(a.querySelectorAll('td')[index].innerHTML.toLowerCase() > b.querySelectorAll('td')[index].innerHTML.toLowerCase()) return -1;
-					if(a.querySelectorAll('td')[index].innerHTML.toLowerCase() < b.querySelectorAll('td')[index].innerHTML.toLowerCase()) return 1;
-					return 0;
-				}
-				else{
-					return ((b.querySelectorAll('td')[index].innerHTML)-(a.querySelectorAll('td')[index].innerHTML));
-				}
-			}
+			
 			
 		function checkIsAscendAttributeValue(event){
 			return event.target.getAttribute('isAscend');
